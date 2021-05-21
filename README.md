@@ -7,4 +7,4 @@ Check the weather aesthetically
 
   2.Choose locator icon if you want to use your current location
 
-  3.Change the measurement unit of temperature, by the dropdown, but you need to fetch data again(by one of the previous functionalities)
+  3.Change the measurement unit of temperature, by the dropdown, after selecting a city.
