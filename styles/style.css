@@ -35,7 +35,7 @@ body {
 
 .container {
   width: 26rem;
-  min-height: 65vh;
+  min-height: 480px;
   margin: 0 auto;
   background-color: #978383;
   color: white;
@@ -43,7 +43,19 @@ body {
 
 .top-section {
   text-align: center;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 1rem 0.6rem 1rem;
+}
+
+.top-section .wrong-input {
+  display: none;
+  text-align: left;
+  font-family: 'Newsreader';
+  color: #6e0000;
+  padding: 0.2rem 0.6rem;
+}
+
+.top-section .wrong-input::first-letter {
+  text-transform: capitalize;
 }
 
 .top-section .location-section {
@@ -53,6 +65,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding-bottom: 0.2rem;
 }
 
 .top-section .location-section .search-section {
@@ -155,7 +168,6 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 1rem;
-  padding-top: 0rem;
 }
 
 .date-section .date {
