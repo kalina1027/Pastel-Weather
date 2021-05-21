@@ -33,7 +33,7 @@ body{
 }
 .container{
     width:26rem;
-    min-height: 65vh;
+    min-height: 480px;
     // width:70%;
     margin: 0 auto;
     background-color: #978383;
@@ -42,10 +42,21 @@ body{
 
 .top-section{
     text-align: center;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 1rem 0.6rem 1rem;
+    .wrong-input{
+        display: none;
+        text-align: left;
+        font-family:'Newsreader';
+        color: #6e0000;
+        padding: 0.2rem 0.6rem;
+        &::first-letter{
+            text-transform: capitalize;
+        }
+    }
     .location-section{
         display: flex;
         justify-content: space-between;
+        padding-bottom:0.2rem;
         .search-section{
             display: flex;
             #search{
@@ -83,6 +94,7 @@ body{
                 cursor:pointer;
             }
         }
+        
     }
     
     .current-location{
@@ -116,7 +128,6 @@ body{
     display: flex;
     justify-content: space-between;
     padding:1rem;
-    padding-top:0rem;
     .date{
         display: flex;
         h4{
