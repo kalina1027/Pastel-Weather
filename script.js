@@ -204,18 +204,23 @@ fillCitiesJSON();
 const checkSelectedCity=(searchedCities, lat, lon)=>{
     if(searchedCities.length>0){
         let check=false;
-        searchedCities.forEach(city=>{
+        searchedCities.forEach((city, index)=>{
             console.log("lon: "+typeof(lon));
             console.log("citylon: "+typeof(city.coord.lon));
             if(city.coord.lat==lat && city.coord.lon==lon){
-                let date=calculateDate(city.timezone);
-                if(date.getMinutes()==59)
+                let date=Math.floor(calculateDate(city.timezone).getTime()/1000);
+                let oldDate=city.dt;
+                console.log(date);
+                console.log(oldDate);
+                console.log(date-oldDate);
+                //1sec=60, 1min=60*60=3600, 30min=3600*30=108000
+                if((date-oldDate)>108000)
                 {
                     setTimeout(()=>{
                         fetchWeather(lat, lon);
                         searchedCities.splice(index, 1);
-                        console.log(true);
-                    }, 60000);
+                        console.log("intimeout");
+                    }, 1000);
                 }
                 showWeather(city);
                 check=true;
