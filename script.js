@@ -322,142 +322,16 @@ dropdown.addEventListener('change', ()=>{
 
 console.log(searchedCities);
 
-
-
-
-
-
-// if (fullWeather.message) {
-            //     console.log("wrong");
-            //     return;
-            //   }
-
-// getLocationWeather(searchBox.value);
-// const getLocationWeather= (cityValue)=>{
-//     fetch(`${baseURL}q=${cityValue}&appid=${apikey}${unitsURL}`)
-//     .then(weather =>{
-//         return weather.json();
-//     }).then(showWeather);
-// };
-// getCurrentLocationWeather(lon, lat);
-// const getCurrentLocationWeather= (lon, lat)=>{
-    //     searchBox.value=null;
-    //     fetch(`${baseURL}lat=${lat}&lon=${lon}&appid=${apikey}${unitsURL}`)
-    //     .then(weather =>{
-           
-    //         return weather.json();
-    //     }).then(showWeather);
-    // };
-
-// // Use Current Location of Device
-// const currentLocation=document.querySelector('.current-location');
-// currentLocation.addEventListener('click', ()=>{
-//     // getCurrentLocationWeather();
-//     if(navigator.geolocation){
-//         navigator.geolocation.getCurrentPosition(position =>{
-//             // let lon=position.coords.longitude;
-//             // let lat=position.coords.latitude;
-//             // let location=`lat=${lat}&lon=${lon}`;
-//             // if(searchedCities.length>0){
-//             //     searchedCities.forEach(city=>{
-//             //         if(city.coords.lat===lat && city.coords.lon){
-//             //             showWeather(city);
-//             //         }else{
-//             //             fetchWeather(location);
-//             //             console.log("currentLoc+1");
-//             //         }
-//             //     });
-//             // }else{
-//             //     fetchWeather(location);
-//             //     showWeather(searchedCities[0]);
-//             //     console.log("fetching");
-//             // }
-//             let lat=position.coords.latitude;
-//             let lon=position.coords.longitude;
-//             getWeather(lat, lon);
-//         });
-//     }else{
-//         showErrorMessage("Geolocation blocked!");
-//         // console.log("Geolocation blocked!");
-//     }
-// });
-// const search=document.querySelector('.fa-search');
-// search.addEventListener('click', ()=>{
-//     // if(searchBox.value){
-//         let location=`q=${searchBox.value}`;
-//         if(searchedCities.length>0){
-//             searchedCities.forEach(city=>{
-//                 if(city.name===searchBox.value){
-//                     showWeather(city);
-//                 }else{
-//                     fetchWeather(location);
-//                     console.log("search+1");
-//                 }
-//             });
-//         }else{
-//             fetchWeather(location);
-//         }
-//     // }else{
-//     //     console.log("Enter a city!");
-//     // }
-// });
-// const getCurrentLocationWeather=()=>{
-//     if(navigator.geolocation){
-//         navigator.geolocation.getCurrentPosition(position =>{
-//             let lon=position.coords.longitude;
-//             let lat=position.coords.latitude;
-//             let location=`lat=${lat}&lon=${lon}`;
-//             if(searchedCities.length>0){
-//                 searchedCities.forEach(city=>{
-//                     if(city.coords.lat===lat && city.coords.lon){
-//                         showWeather(city);
-//                     }else{
-//                         fetchWeather(location);
-//                         console.log("currentLoc+1");
-//                     }
-//                 });
-//             }else{
-//                 fetchWeather(location);
-//                 showWeather(searchedCities[0]);
-//                 console.log("fetching");
-//             }
-//         });
-//     }else{
-//         showErrorMessage("Geolocation blocked!");
-//     }
-// }
-//Get Weather
-// const getWeather=(lat, lon)=>{
-//     let location=`lat=${lat}&lon=${lon}`;
-//     fetchWeather(location);
-//     console.log("fetchingGetWeather");
-// }
-// let divSug=document.createElement('div');
-            // divSug.innerHTML=searchedCities[i].name+', '+searchedCities[i].sys.country;
-            // suggestionsDiv.appendChild(divSug);
-            
-            //Choosing a city
-            // divSug.addEventListener('click', ()=>{
-            //     let lat=searchedCities[i].coord.lat;
-            //     let lon=searchedCities[i].coord.lon;
-            //     checkSelectedCity(searchedCities, lat, lon);
-            //     searchBox.value=null;
-            //     suggestionsDiv.innerHTML='';
-            // });
-            // let divSug=document.createElement('div');
-        // divSug.setAttribute('data-lon', '"'+suggestionCities[i].coord.lon+'"');
-        // divSug.setAttribute('data-lat','"'+ suggestionCities[i].coord.lat+'"');
-        // divSug.dataset.lat='"'+ suggestionCities[i].coord.lat+'"';
-        // suggestionsDiv.appendChild(divSug);
-        
-        // console.log(suggestionsDiv);
-        //Choosing a city
-        // divSug.addEventListener('click', (e)=>{
-        //     let lat=suggestionCities[i].coord.lat;
-        //     let lon=suggestionCities[i].coord.lon;
-        //     console.log("tuk");
-        //     console.log(lat);
-        //     checkSelectedCity(searchedCities, lat, lon);
-        //     searchBox.value=null;
-        //     suggestionsDiv.innerHTML='';
-        // });
+// Show weather initially
+const currentLocationWeatherInitially=()=>{
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(position =>{
+            let lat=position.coords.latitude;
+            let lon=position.coords.longitude;
+            checkSelectedCity(searchedCities, lat, lon);
+        });
+    }else{
+        showErrorMessage("Geolocation blocked!");
+    }
+};
+currentLocationWeatherInitially();
