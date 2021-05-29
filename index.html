@@ -9,7 +9,6 @@
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,500;1,700&display=swap" rel="stylesheet"> -->
 </head>
 <body>
     <div class="heading-section">
@@ -17,12 +16,11 @@
         <h2>Check the weather aesthetically</h2>
     </div>
     <div class="container">
-        
+        <!-- Горна секция -->
         <div class="top-section">
             <div class="location-section">
                 <div class="search-section">
                     <input type="text" name="search" id="search" placeholder="Search city">
-                    <!-- <i class="fas fa-search"></i> -->
                 </div>
                 <i class="fas fa-map-marker-alt current-location">
                     <span class="tooltip">Use Current Location</span>
@@ -33,14 +31,14 @@
                     <option value="Kelvin" data-unit="toKelvin">&#176;K</option>
                 </select>
             </div>
+            <!-- Предложения при autocomplete -->
             <div class="suggestions">
                 <!-- <div>London</div>
                 <div>Sofia</div>
                 <div>Varna</div> -->
             </div>
-            <p class="wrong-input">city not found</p>
         </div>
-        
+        <!-- Дата и час -->
         <div class="date-section">
             <div class="date">
                 <h4 class="weekday">Fri</h4>
@@ -53,9 +51,10 @@
                 <h2 class="minutes">02</h2>
             </div>
         </div>
+        <!-- Текущо време -->
         <div class="main-section">
             <div class="current-weather-section">
-                <h2 class="city">Sofia, Bulgaria</h2>
+                <h2 class="city" data-lat="" data-lon="">Sofia, Bulgaria</h2>
                 <h2 class="degrees">28&#176;</h2>
                 <h2 class="current-weather">Cloudy</h4>
                 <h2 class="feels-like">Feels like: 25&#176;</h2>
@@ -65,6 +64,7 @@
                 <img class="weather-icon" src="http://openweathermap.org/img/wn/10d@2x.png" alt="Weather icon">
             </div>
         </div>
+        <!-- Допълнителна информация за прогнозата -->
         <div class="additional-section">
             <div class="left">
                 <h2 class="min">Minimum: 12&#176;</h2>

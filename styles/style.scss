@@ -44,16 +44,6 @@ body{
     text-align: center;
     padding: 1.5rem 1rem 0.6rem 1rem;
     position: relative;
-    .wrong-input{
-        display: none;
-        text-align: left;
-        font-family:'Newsreader';
-        color: #6e0000;
-        padding: 0.2rem 0.6rem;
-        &::first-letter{
-            text-transform: capitalize;
-        }
-    }
     .suggestions{
         text-align: left;
         margin-top:2px;
